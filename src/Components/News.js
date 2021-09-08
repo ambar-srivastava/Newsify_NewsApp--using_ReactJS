@@ -74,7 +74,7 @@ export class News extends Component {
     render() {
         return (
             <div className="container my-4">
-                <h2 className="text-center my-4">Newsify - Top {this.captalizeFirstLetter(this.props.category)} Headlines</h2>
+                <h2 className="text-center my-4" style={{fontWeight: "600"}}>Newsify - Top {this.captalizeFirstLetter(this.props.category)} Headlines</h2>
                 {/* {this.state.loading && <Spinner />} */}
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
@@ -86,7 +86,7 @@ export class News extends Component {
                         <div className="row">
                             {this.state.articles.map((element) => {
                                 return <div className="col-md-4" key={element.url}>
-                                    <NewsItem title={element.title ? element.title.slice(0, 40) : ""} description={element.description ? element.description.slice(0, 80) : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
+                                    <NewsItem title={element.title ? element.title.slice(0, 40) : ""} description={element.description ? element.description.slice(0, 100) : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                                 </div>
                             })}
                         </div>
